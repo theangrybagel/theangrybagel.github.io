@@ -1,0 +1,5 @@
+SetEditorData2('Skills','Misc','Hacking',2);
+SetEditorData2('Skills','Misc','Lockpicking',2);
+SetEditorData2('Skills','Misc','Spacecraft Operation',2);
+SetEditorData2('Skills','Misc','Planetary Vehicle Operation',2);
+SetEditorData2('Skills','Misc','Luck',2);

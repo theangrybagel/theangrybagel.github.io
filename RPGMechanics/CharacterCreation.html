@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Character Creation</title>
+        <script>
+            var DirectoryAmt = 1;
+        </script>
+        <script src = "../Nav.js" id="s1"></script>
+        <script src="../code.js" id="s2"></script>
+    <script>StartNav();</script>
+    </head>
+    <body>
+    <div id="NavBarThing" class=""></div>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+        <h1 id="title" class="title">Character Creation</h1>
+        <div id="content">
+            <h4><a href="RPGMechanics/CharacterSheet.html">Character Sheet</a></h4>
+            <h3>Stats</h3>
+            <p>All stats are initially set to 2 except for the ones listed below. Stats should be rolled for using a D20. Divide the roll by four and round to the nearest integer. If you roll a 19 or a 20, you may roll another D20 and add that value divided by four to the first roll. This can only happen once per stat (no stat should be greater than 10 to start with). If you roll less than a 5, you may reroll until you roll something greater than 5.</p>
+            <i>Note: Max health is calculated like all other stats except the result is multiplied by 10 (allowing a max health of 100)</i>
+            <div style="text-align: left">
+            <ul>
+                <li>Strength</li>
+                <li>Perception</li>
+                <li>Awareness</li>
+                <li>Intelligence</li>
+                <li>Reputation</li>
+                <li>Endurance</li>
+                <li>Max Health</li>
+            </ul>
+            </div>
+            <div>
+                <h3>Classes</h3>
+                <p>Classes, to some extent, generally describe what a character does for a living. Each class will have several skills along with mutlipliers that are applied to the character's skills after they distribute their skill points. If a boosted skill is equal to zero, set the skill to be equal to one. If a player's character has a melee skill of 2, and the class has a multiplier for melee of 2.5, the player's melee skill is now 5. If the melee skill is zero, set it to be 1. Click <a href="RPGMechanics/Classes.html">here</a> for a list of classes. </p>
+            </div>
+
+            <h3>Skills</h3>
+            <p>Every character will have a variety of skills. Each player is given 20 + D10 skill points to begin with. One skill point can be redeemed to increase a desired skill by 1. The following is a list of skills players can learn: </p>
+        <div>
+            <h4>Combat</h4>
+            <b>Small Weapons | Large Weapons | Melee | Ranged Weapons | Improvised Weapons | Dodging | </b>
+        </div>
+        <div>
+            <h4>Brain</h4>
+            <b>Spaceship Engineering | Politics | Persuasion | Weapon Engineering | Galactic Knowledge | Instant Judgement | Situational Awareness | Tracking | </b>
+        </div>
+        <div>
+            <h4>Physical</h4>
+            <b>Evasion | Running | Stealth | Climbing | Grip</b>
+        </div>
+        <div>
+            <h4>Misc</h4>
+            <b>Hacking | Lockpicking | Heavy Spacecraft Operation | Spacecraft Operation | Planetary Vehicle Operation | Luck | </b>
+        </div>
+        <h3>Calculating Credits</h3>
+        <p>To calculate your balance, roll a D100 (or two D10s), multiply it by another D10, followed by another multiplication of another D10. Multiply your current number by 4D20. Here's an example where every roll was at it's max level: 100 * 10 * 10 * (20 + 20 + 20 + 20) = 800,000CR. To calculate the final balance, divide your balance by the value of your class's special skill value. Next, add 200,000 to your balance. Before any players make any item purchases or anything, divide each character's balance by the number of players in the crew.  
+    </div>
+    </body>
+</html>

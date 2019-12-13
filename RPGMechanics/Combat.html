@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Combat</title>
+        <script>
+            var DirectoryAmt = 1;
+        </script>
+        <script src = "../Nav.js" id="s1"></script>
+        <script src="../code.js" id="s2"></script>
+    <script>StartNav();</script>
+    </head>
+    <body>
+    <div id="NavBarThing" class=""> </div>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+        <h1 id="title" class="title">Combat Rules</h1>
+        <div id="content">
+            <h2>Dealing Damage</h2>
+            <h3>Calculating Base Damage</h3>
+            <p>To calculate base damage, add the weapons damage value the modifiers associated to that weapon type. If there are multiple types for a weapon, add all of the modifiers for each of the types (discard duplicate modififiers). If the modifier is a <i>stat</i> and not a <i>skill</i>, divide it by 3 and round to the nearest integer before applying it. </p>
+            <table class="tableMain">
+                <tr>
+                    <td>Weapon Type</td>
+                    <td>Modifiers (skills)</td>
+                </tr>
+                <tr>
+                    <td>M</td>
+                    <td>+ Melee + Strength</td>
+                </tr>
+                <tr>
+                    <td>R</td>
+                    <td>+ Perception</td>
+                </tr>
+                <tr>
+                    <td>S</td>
+                    <td>+ Small Weapons</td>
+                </tr>
+                <tr>
+                    <td>L</td>
+                    <td>+ Strength</td>
+                </tr>
+            </table>
+            <br>
+            <h3>Calculating Hits/Misses</h3>
+            <p>To calculate whether or not an action misses, consult the following instructions:<br>
+                If the range of the weapon is less than the distance between the attacker and the target, the attack misses. Otherwise, continue. Roll a D20 and add the attackers perception skill to that, and then roll a D20 and add the targets awareness skill to that. If the attacker has a higher number than the target, the attack hits. If it's a tie, the defender takes only a fourth of the damage. If the attacker rolls lower than the target, the attack misses.
+            </p>
+            <br>
+            <h3>Calculating Effects</h3>
+            <p>The following is a table of weapon effects and what they do. Some effects are followed by a number, this number is represented as <i>p</i></p>
+            <table class="tableMain">
+                <tr>
+                    <td>Effect Name</td>
+                    <td>Instructions</td>
+                </tr>
+                <tr>
+                    <td>Razor</td>
+                    <td>If D6 < p, ignore any defenses lower than level 1. </td>
+                </tr>
+                <tr>
+                    <td>Bleed</td>
+                    <td>If D6 < p, and body damage is done (as in damage to the target and just the armor), and the damage is greater than 3, the target now bleeds for <i>p</i> amount of turns, losing D6 health per turn.</td>
+                </tr>
+                <tr>
+                    <td>Burn</td>
+                    <td>Deals burning damage to the target and its armor. Attacks to explosives triggerable by heat can cause explosions. </td>
+                </tr>
+                <tr>
+                    <td>Peirce</td>
+                    <td>If D6 > 4, and <i>p</i> >= the targets armor level, deal base damage to armor and base damage divided by 4 to the target.</td>
+                </tr>
+            </table>
+    </div>
+    </body>
+</html>
