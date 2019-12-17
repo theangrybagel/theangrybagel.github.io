@@ -30,7 +30,7 @@ function setupstarmap()
 		indx += 1
 	});
 	selectTag += "</select>"
-	newEl.innerHTML += "<canvas id='planetcanv' width='800' height='500'></canvas><br><div class='slidercontainer'><input type='range' min='-50' max='50' value='1' class='slider' id='slider1'></input></div><br><select id='select0'>" + selectTag + "<br><select id='select1'>" + selectTag + "<br><p id='dist'></p>"
+	newEl.innerHTML += "<canvas id='planetcanv' width='800' height='500'></canvas><br><div class='slidercontainer'><input type='range' min='-50' max='50' value='1' class='slider' id='slider1'></input></div><br><select id='select0'>" + selectTag + "<br><select id='select1'>" + selectTag + "<br><p id='dist'></p><p id='year'></p>"
 	insertAfter(newEl, p)
 	c = document.getElementsByTagName("canvas")[0]
 	ctx = c.getContext('2d')
@@ -62,6 +62,7 @@ function setupstarmap()
 	setInterval(UpdateThing, 10)
 }
 o = 0
+year = 63454
 function UpdateThing()
 {
 	var c = document.getElementsByTagName("canvas")[0]
@@ -85,6 +86,8 @@ function UpdateThing()
 	document.getElementById("dist").innerHTML = "Distance: " + dis;
 	i = 0
 	speed = document.getElementById("slider1").value
+	year += speed/10000;
+	document.getElementById("year").innerHTML = "Year: " + Math.round(year * 1000)/1000 + " AGF."
 	planets.forEach(function(element){
 		c = "white"
 		if(element[3] === "Volcanic")
