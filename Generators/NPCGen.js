@@ -19,7 +19,7 @@ AddEditorSubcategory("Skills", "Misc")
 AddEditorCategory("Equipment")
 SetEditorData("Stats", "Strength", RollForStat())
 SetEditorData("Stats", "Perception", RollForStat())
-SetEditorData("Stats", "Awareness", RollForStat())
+//SetEditorData("Stats", "Awareness", RollForStat())
 SetEditorData("Stats", "Intelligence", RollForStat())
 SetEditorData("Stats", "Reputation", RollForStat())
 SetEditorData("Stats", "Endurance", RollForStat())
@@ -46,9 +46,9 @@ SetEditorData2('Skills','Misc','Lockpicking',0);
 SetEditorData2('Skills','Misc','Spacecraft Operation',0);
 SetEditorData2('Skills','Misc','Planetary Vehicle Operation',0);
 SetEditorData2('Skills','Misc','Luck',0);
-weapons = ["Melverth Lightcaster", "FTX-9", "None"]
-weapons2 = ["None", "Anopium Knives"]
-armor = ["CT-12", "CT-16", "NB-73"]
+weapons = ["Melverth Lightcaster", "FTX-9", "VZFF-37", "High Power Zapcaster", "Feverdriver", "Nitrogenic Hyperemitter", "ASG", "Titanrifle", "Jolter", "None"]
+weapons2 = ["None", "Anopium Knives", "VZFF-37", "High Power Zapcaster", "Nitrogenic Hyperemitter", "P1-92"]
+armor = ["CT-12", "CT-16", "NB-73", "FSR-94", "FMI-67"]
 SetEditorData("Equipment", "Weapon", random.choice(weapons))
 SetEditorData("Equipment", "Secondary Weapon", random.choice(weapons2))
 SetEditorData("Equipment", "Armor", random.choice(armor))

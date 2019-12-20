@@ -102,12 +102,19 @@ function UpdateThing()
 			c = "purple"
 		if(element[3] === "Desert")
 			c = "orange"
+
 		ctx.fillStyle = c
 		ctx.strokeStyle = c
 		ctx.beginPath()
 		ctx.ellipse(350, 250, element[1]*15, element[1]*15, 0, 0, 360)
 		ctx.stroke()
 		ctx.beginPath()
+		if(element[3] === "Goth")
+		{
+			c = "black"
+			ctx.fillStyle = c
+			ctx.strokeStyle = c
+		}
 		//random point on circle would be nice
 		var r = element[1]*15
 		var angle = planetangles[i] + 1/(element[2])
@@ -116,6 +123,11 @@ function UpdateThing()
 		var y = r*Math.cos(toRadians(angle))
 		ctx.ellipse(350+x, 250+y, Math.min(Math.max(element[2]/100, 3), 10), Math.min(Math.max(element[2]/100, 3), 10), 0, 0, 360)
 		ctx.fill()
+		if(element[3] === "Goth")
+		{
+			ctx.strokeStyle = "white"
+			ctx.stroke()
+		}
 		ctx.fillStyle = "white"
 		ctx.font = "14px Arial"
 		ctx.fillText(element[0], 350+x, 250+y-Math.max(element[2]/100, 3))
