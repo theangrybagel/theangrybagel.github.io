@@ -28,6 +28,7 @@ body
     z-index: 3;
     position: sticky;
     top: 0;
+    height: 50px;
 }
 .tableMain
 {
@@ -144,11 +145,24 @@ nav a:hover+#search00 {
     font-size: 26px;
     text-align: center;
     transition: .15s;
+    display: inline-block;
     padding: 15px 15px 15px 15px;
+}
+.mainLink2
+{
+    font-size: 26px;
+    text-align: center;
+    transition: .15s;
+    padding: 15px 15px 15px 15px;
+}
+.mainLink2:hover{
+    font-size: 30px;
+    transform: skewX(-7deg);
 }
 .mainLink:hover
 {
-    font-size: 32px;
+    font-size: 30px;
+    transform: skewX(-7deg);
 }
 .center
 {
