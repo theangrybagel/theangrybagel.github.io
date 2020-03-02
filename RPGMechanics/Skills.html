@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Skills</title>
+        <script>
+            var DirectoryAmt = 1;
+        </script>
+        <script src = "../Nav.js" id="s1"></script>
+        <script src="../code.js" id="s2"></script>
+    <script>StartNav();</script>
+    </head>
+    <body>
+    <div id="NavBarThing" class=""></div>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+        <h1 id="title" class="title">Skills</h1>
+    <div id="content">
+        <p>Most of a player's skills will usually be set to 0. If a player wants their character to specialize in something, increasing a skill that can be linked to their character is ideal. Some skills are boosted by a character's stats. The following is a list of all the skills in WPLTS, and descriptions of how they are used. If a skill is boosted by a stat, this will be noted in the description. There will be a number in parentheses, which represents the number to subtract from the players stat when adding it to a skill. If a players Small Weapons base (by base, I mean without any modifications) skill is 3, and the boost is dexterity(5), and their dexterity is 8, the calculated value of this skill will be 3 + (8-5), which is 6. If their dexterity happened to be less than five, such as 4, then the skill would be 3 + (4-5), which is 2. If there are two or more stat boosts to a skill, add the modifiers together and use the average of those modifiers when calculating the value of a skill. If there is an M after the stat boost, such as Agility(5)M, negate any negative values when calculating. </p>
+        <h2>How to use skill checks for undocumented actions</h2>
+        <p>After calculating the final value of a skill, you'll probably want to know what to do with that value. Have the player roll a D20, and add their skill value to that number. Then, you, the game master, roll a D20. If the player rolled higher than you, then their action succeeds. Common sense can be used from here to figure out the outcome of their action.
+        <ul>
+            <li>Small Weapons - Affects damage when using a small weapon. Dexterity(5)</li>
+            <li>Large Weapons - Affects damage when using a large weapon. Beef(5)</li>
+            <li>Melee Weapons - Affects damage when using a melee weapon. Beef(4) Agility(5)M</li>
+            <li>Ranged Weapons - Affects accuracy when using a ranged weapon. Dexterity(6)</li>
+            <li>Thrown Weapons - Affects accuracy when throwing objects. Beef(5)M Dexterity(5)</li>
+            <li>Improvised Weapons - Affects accuracy and damage when using a weapon that has no documentation. Brainpower(5)</li>
+            <li>Spaceship Engineering - Used when modifying a spaceship. Brainpower(5)</li>
+            <li>Politics - Can be used in political situations. Brainpower(5) Glamour(5)</li>
+            <li>Persuasion - Used when trying to convince someone of something. Glamour(6) Brianpower(4)</li>
+            <li>Weapon Engineering - Used when engineering and/or modifying weapons. Brainpower(5)</li>
+            <li>Galactic Knowledge - Used for general intelligence checks. Brainpower(3)</li>
+            <li>Instant Judgement - Used to predict the outcome of a situation, or the intentions of a person. Brainpower(6) Dexterity(6)(Only in combat situations)</li>
+            <li>Situational Awarness - Used to check how much a character about their surroundings/what's happening. Dexterity(5) Brainpower(5)</li>
+            <li>Tracking - Used when determining where someone or something has probably gone. Brainpower(6) Dexterity(6)(Only in physical situations)</li>
+            <li>Evasion - Used when dodging or evading things. Agility(6)</li>
+            <li>Running - Used when determining how far a player runs, or if they outrun someone else.</li>
+            <li>Stealth - Used when sneaking around undetected. Agility(5)</li>
+            <li>Grip - Used when climbing, or hanging on to something. Agility(6)M Beef(6)</li>
+            <li>Hacking - Used when hacking things. Brainpower(7)</li>
+            <li>Lockpicking - Used when picking physical locks. Electronic locks use the hacking skill. Brainpower(5) Dexterity(7)</li>
+            <li>Heavy Spacecraft Operation - Used when operating large spacecraft, such as cargo ships. Must be greater than 3 to operate at minimal efficiency. Brainpower(6) Dexterity(5)</li>
+            <li>Spacecraft Operaiton - Used when operating personal use spacecraft. Must be greater than 3 to know how to operate at minimal efficiency. Brainpower(5) Dexterity(6)</li>
+            <li>Planetary Vehicle Operation - Used when operatin planetary vehicles. Brainpower(5)M Dexterity(6)</li>
+
+        </ul>
+    </div>
+    </body>
+</html>
