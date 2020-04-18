@@ -3,7 +3,7 @@ var titles = [];
 var toRoot = "";
 
 //used to get to the root directory
-setTimeout(function(){ FixLinks()}, 10);
+setTimeout(function(){ FixLinks()}, 100);
 for(i = 0; i < DirectoryAmt; i++)
 {
     toRoot += "../";
@@ -38,7 +38,7 @@ function random()
 }
 function FixLinks()
 {
-    var as = document.getElementsByTagName("a");
+    var as = Array.from(document.getElementsByTagName("a"))
     for(i = 0; i < as.length; i++)
     {
 
@@ -48,11 +48,10 @@ function FixLinks()
             var newHref = toRoot + href;
             as[i].setAttribute('href', newHref);
         }
-        
-
     }
-    
-    as2 = document.getElementsByTagName("a");
+    as2 = document.getElementsByTagName("a")
+    console.log(as2.length)
+    console.log(as2)
     for(i = 0; i < as2.length; i++)
     {
         var newH = ""
@@ -67,6 +66,7 @@ function FixLinks()
             newH += slsh + y.trim()
         }
         as2[i].setAttribute("href", newH)
-        console.log(document.getElementsByTagName("a")[i])
+        console.log(Array.from(document.getElementsByTagName("a"))[i])
     }
+    console.log("Fixed all links.")
 }

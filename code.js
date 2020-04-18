@@ -22,7 +22,7 @@ var element = document.getElementsByTagName('head')[0];
 element.appendChild(para);
 }
 
-    function Search() {
+function Search() {
         var result = "";
         var searchTxt = getE("search00").value.toLowerCase();
         //var pos = getPosition(getE("search00"));
