@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ship Management</title>
+        <script>
+            var DirectoryAmt = 1;
+        </script>
+        <script src = "../Nav.js" id="s1"></script>
+        <script src="../code.js" id="s2"></script>
+    <script>StartNav();</script>
+    </head>
+    <body>
+    <div id="NavBarThing" class=""> </div>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+        <h1 id="title" class="title">Ship Management</h1>
+        <div id="content">
+            <p>Spaceships are a big part of WPLTS. Players can customize their ship if they wish, adding different components that change the way their spaceship works. Each ship model will have a list of supported components, as well as certain specifications for those components. Below is a list of all the ship components a player can modify.</p>
+            <table class='tableMain'>
+                <tr>
+                    <td>Component</td>
+                    <td>Details</td>
+                </tr>
+                <tr>
+                    <td>Low level thrusters</td>
+                    <td>Most ships have two slots for these components.</td>
+                </tr>
+                <tr>
+                    <td>High level thrusters</td>
+                    <td>Most ships have two slots for these components.</td>
+                </tr>
+                <tr>
+                    <td>Guidance thrusters</td>
+                    <td>Most ships have 6 slots for these components, but custom guidance thrusters have not been implemented into the documented mechanics of WPLTS.</td>
+                </tr>
+                <tr>
+                    <td>Weapon Slots</td>
+                    <td>Most ships will have several weapon slots, however each slot is assigned a class, and a ship weapon MUST match the class of the slot you're assigning it to in order for it to be equipped.</td>
+                </tr>
+            </table>
+            <h2>Calculating Ship Speed and fuel intake</h2>
+            <p>Ship speed is calculated by taking the speed of the thrusters in use, and adding the speeds together. The fuel intake is calculated by adding the fuel intakes of all the thrusters in use together. </p>
+
+        </div>
+    </body>
+</html>

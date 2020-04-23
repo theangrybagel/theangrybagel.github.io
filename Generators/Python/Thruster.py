@@ -2,8 +2,8 @@ import Lib, random
 
 
 def GetThruster():
-	names1 = "death pan bee coal bag weasle sea dirt floor sand space nail cream wealth knife cannon beef police train".split(" ")
-	names2 = "blaster booster jetter equalizer finisher driver swimmer propeller skipper weaver mover runner walker".split(" ")
+	names1 = "death star planet dust gas juice pan bee coal bag weasle sea dirt floor sand space nail cream wealth knife cannon beef police train".split(" ")
+	names2 = "blaster thruster passer ranger speeder booster jetter equalizer finisher driver swimmer propeller skipper weaver mover runner walker".split(" ")
 	name = random.choice(names1) + random.choice(names2)
 	types = ["High level thrusters", "Low level thrusters"]
 	units = ["Yorks per unit", "Microyorks per unit"]
@@ -22,7 +22,3 @@ def GetThruster():
 	print(units[tp]+":", yorksperunit*(fuelranges[tp][1]-fuelranges[tp][0])+fuelranges[tp][0])
 	print("Speed: ", (speedranges[tp][1]-speedranges[tp][0])*speed+speedranges[tp][0], speedunits[tp])
 	print("Cost: ", cost, "CR")
-
-for x in range(10):
-	GetThruster()
-	print('\n')
