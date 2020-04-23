@@ -14,17 +14,20 @@
     <link href="style.css" rel="stylesheet" type="text/css">
         <img id="cover" src='Capture.PNG'>
         <div id="content">
-        <a href="About.html" class="mainLink"><h1 class="title">About</h1></a>
+        <a href="About.html" class="mainLink2"><h1 class="title">About</h1></a>
         <br>
-        <a href="Locations.html" class="mainLink"><h1 class="title">Locations</h1></a>
+        <a href="RPGMechanics/RPGMechanics.html" class="mainLink2"><h1 class="title">RPG Mechanics and Campaigns</h1></a>
         <br>
-        <a href="Races/Races.html" class="mainLink"><h1 class="title">Races</h1></a>
+        <a href="Team.html" class="mainLink2"><h1 class="title">The Team</h1></a>
         <br>
-        <a href="Items/ItemsAndShips.html" class="mainLink"><h1 class="title">Items and Vehicles</h1></a>
+        <!--a href="Items/ItemsAndShips.html" class="mainLink"><h1 class="title">Items and Vehicles</h1></a>
+        <br-->
+        <a href="SpaceTerms/Terms.html" class="mainLink2"><h1 class="title">Lore and Space Things</h1></a>
         <br>
-        <a href="RPGMechanics/RPGMechanics.html" class="mainLink"><h1 class="title">RPG Mechanics and Campaigns</h1></a>
+        <a href="GameGuide/GameGuide.html" class="mainLink2"><h1 class="title">The Video Game</h1></a>
         <br>
-        <a href="SpaceTerms/Terms.html" class="mainLink"><h1 class="title">Space Terms</h1></a>
+        <a href="Soundtrack/Soundtrack.html" class="mainLink2"><h1 class="title">The Soundtrack</h1></a>
+        <br>
         </div>
     <style>
     #cover
