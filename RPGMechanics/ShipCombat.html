@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Combat</title>
+        <script>
+            var DirectoryAmt = 1;
+        </script>
+        <script src = "../Nav.js" id="s1"></script>
+        <script src="../code.js" id="s2"></script>
+    <script>StartNav();</script>
+    </head>
+    <body>
+    <div id="NavBarThing" class=""> </div>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+        <h1 id="title" class="title">Spaceship Combat</h1>
+        <div id="content">
+            <p>Most regular weapons cannot do any damage to a spaceship, unless it's specified that they do ship damage. Ships use a different health system than players and NPCs. Every ship has a shield, which has a certain amount of health and requires a certain amount of power. When the shield runs out of health, damage is done to the ship's plating, and then to the ship itself. </p>
+            <h2>Calculating Input Damage</h2>
+            <p>Every ship weapon has a damage value, as well as a cooldown time. Consider the cooldown as the number of turns a player has to wait before using the weapon again. The input damage is the value of this damage value. </p>
+            <h2>Damage to the shield</h2>
+            <p>Each shield has a minimum damage value, and if the damage being done to the ship is lower than this value, the shield takes no damage. Otherwise, the shield loses however much the input damage is from its HP. </p>
+            <h2>Damage to The Armor</h2>
+            <p>After the shield is down, damage is done to the ship's armor/plating. To calculate the damage done to the armor, use this equation: D = ID - ID*(PR/100) where ID = input damage and PR = the protection rating of the ship's plating. To calculate the max HP of the armor, use this equaiton: HP = PR*P where PR = the protection rating of the ship's plating and P = the units of plating the ship body uses.
+            <h2>Damage to The Hull</h2>
+            <p>Once the armor reaches 5% of it's max health, damage will be directed to the hull if D20 < 10-(the captains spacecraft operation skill). If the armor is at 0%, the damage will be directed to the hull. If the hull health of a ship is depleted all the way, then everyone on that ship will most likely die. It's generally best to flee when your shield has been taken down, so if you get to this point either the players are really bad at this or your NPCs have a death wish. When taking damage to the hull, if D20 < 5, then select a random ship component, such as a thruster, or one of the weapons, and announce that it has been broken. This ship component will not function unless repaired by a ship engineer. To calculate the max HP of the hull, divide the hull's mass by two, and that will be your max health value.</p>
+
+    </div>
+    </body>
+</html>
