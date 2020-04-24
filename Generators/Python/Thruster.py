@@ -1,5 +1,7 @@
 import Lib, random
 
+def Round(num):
+	return int(num*100)/100
 
 def GetThruster():
 	names1 = "death star planet dust gas juice pan bee coal bag weasle sea dirt floor sand space nail cream wealth knife cannon beef police train".split(" ")
@@ -17,8 +19,7 @@ def GetThruster():
 	cost = costs[tp][0] + (costs[tp][1] - costs[tp][0])*.4 * yorksperunit + .5*(speed*(1+speed))*(costs[tp][1] - costs[tp][0])
 	costvariation = 1 + random.randrange(-300, 300)/1000
 	cost = cost * costvariation
-	print("Name:", name)
-	print("Type:", types[tp])
-	print(units[tp]+":", yorksperunit*(fuelranges[tp][1]-fuelranges[tp][0])+fuelranges[tp][0])
-	print("Speed: ", (speedranges[tp][1]-speedranges[tp][0])*speed+speedranges[tp][0], speedunits[tp])
-	print("Cost: ", cost, "CR")
+	thing = {"Name": name, "Type": types[tp], str(units[tp]): yorksperunit*(fuelranges[tp][1]-fuelranges[tp][0])+fuelranges[tp][0]}
+	thing["Speed"] = str((speedranges[tp][1]-speedranges[tp][0])*speed+speedranges[tp][0]) + " " + speedunits[tp]
+	thing["Cost"] = Round(cost)
+	return thing
