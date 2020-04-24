@@ -16,5 +16,5 @@ def Generate(args):
 
 
 commands = []
-commands.append(Command("generate", Generate, "", aliases=['gen'], parameters=[Param("times", "int", 1), Param("source", 'string', 'thruster')]))
+commands.append(Command("generate", Generate, aliases=['gen'], parameters=[Param("times", "int", 1), Param("source", 'string', 'thruster')]))
 Run(commands)
