@@ -74,9 +74,9 @@ def FuelBay(targetsize, t):
 	typelist = Lore.Fuels.low
 	if t.upper().startswith("H"):
 		typelist = Lore.Fuels.high
-	supportedTypes = [random.choice(typelist)["name"]]
+	supportedTypes = [random.choice(typelist)["id"]]
 	for x in range(random.randrange(0, 3)):
-		ft = random.choice(typelist)['name']
+		ft = random.choice(typelist)['id']
 		if ft not in supportedTypes:
 			supportedTypes.append(ft)
 	thing = {"capacity": targetsize, "supported fuel": ""}
@@ -90,10 +90,9 @@ def GetShipWeapon(t):
 		if a['class'] == t:
 			wpn = a
 	return wpn
-
 def ShipGenerator():
-	n1 = "death star planet sour dust gas juice pan bee coal bag weasle sea dirt floor sand space nail cream wealth knife cannon beef police train fire wack face life bag rain snow frisbee coal".split(" ")
-	n2 = "speeder fighter eagle parrot genguin sparrow goose fisher duck bird jet skimmer glider ship wing yacht boat lugger vessel sailer mobile falcon".split(" ")
+	n1 = "death star high ugly split planet sour needle dust gas juice pan beetle bee coal goose bag weasle sea dirt floor sand space nail cream wealth knife cannon beef police train fire wack face life bag rain snow frisbee coal".split(" ")
+	n2 = "speeder fighter eagle parrot penguin beetle sparrow goose fisher duck bird jet skimmer glider ship wing yacht boat lugger vessel sailer mobile falcon".split(" ")
 	ship = {"name": random.choice(n1).title() + random.choice(n2)}
 	hthrusters = GetThruster("High level thrusters")
 	lthrusters = GetThruster("Low level thrusters")

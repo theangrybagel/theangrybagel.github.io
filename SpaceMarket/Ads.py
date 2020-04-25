@@ -23,7 +23,16 @@ ads = ["""
 	<h3 class='c'>Order today, starting from 3000CR per window!</h3>
 	<p class='r'>See Through Industries Inc. All rights reserved.</p>
 </div>
+""",
 """
+<div style='background-color: #3c02c4; color: #72f542;'>
+	<marquee style="top: 0; width: 100%; height: 30px;">Goopwazzer was delicous!&emsp;&emsp; Goopwazzer was great!</marquee>
+	<h3 class='c'>Don't you miss Goopwazzer? We do. </h3><br>
+	<h3 class='c b'>Help bring Goopwazzer back today!</h3>
+	<br>
+	<p class='c'>#revivegoopwazzer</p>
+</div>
+""",
 ]
 
 

@@ -11,8 +11,15 @@
 .r{
 	text-align: right;
 }
-
-
+.b{
+  bottom: 0px;
+}
+.t{
+  top: 0px;
+}
+.checked {
+  color: orange;
+}
 
 .scroll-left {
   height:auto;

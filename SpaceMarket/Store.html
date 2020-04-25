@@ -13,12 +13,13 @@
     <div id="NavBarThing" class=""> </div>
     <script src = "../Nav.js" id="s1"></script>
     <script src="../code.js" id="s2"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="../style.css" rel="stylesheet" type="text/css">
     <link href="market.css" rel="stylesheet" type="text/css">
     <script>StartNav();</script>
 
         <h1 id="title" class="title">Loading... Please wait</h1>
-        <p>This here is a giant space market. It is updated every month with new content. Stuff on the main page will change throughout the month, however. </p>
+        <p>This is a giant space market. Items for sale are updated every week, but the items shown may have different trends, each of them trending into a different direction every fifteen minutes. </p>
         <div id="Store">
             store
         </div>
@@ -27,7 +28,7 @@
         <style>
             #Announcements
             {           
-                position:fixed;
+               position:fixed;
                left:0px;
                bottom:0px;
                height:30px;
@@ -45,10 +46,27 @@
                 width: 24%;
             }
         </style>
+        <br><br><br>
         <div id="Announcements">
             <div class="scroll-left" id="announc">Welcome to the Galactic Market, enjoy the ads!</div>
         </div>
     <script type="text/python" src="Main.py">
     </script>
+    <div id='scripts'>
+        <script type='text/javascript'>
+            function ViewDiv(id, data)
+            {
+                console.log(document.getElementById(id).innerHTML.length)
+                if(document.getElementById(id).innerHTML.length > 3)
+                {
+                    document.getElementById(id).innerHTML = "";
+                }
+                else
+                {
+                    document.getElementById(id).innerHTML = data;
+                }
+            }
+        </script>
+    </div>
     </body>
 </html>

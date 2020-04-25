@@ -66,10 +66,15 @@ body
     background: #251d3a;
     color: #e7dfdd;
 }
-.button 
+.button, .button:active, input[type="button"], .button:focus
 {
+    display: block;
     background: #4717f6;
     color: #e7dfdd;
+    border: none;
+    text-decoration: none;
+    outline: none !important;
+    padding: 0;
 }
 a:visited
 {
