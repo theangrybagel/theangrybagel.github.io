@@ -1,33 +1,15 @@
-#for editing the python code that goes into store.html
-#LIB
-import random
-def StrDict(d, tb=""):
-	txt = ""
-	for x in d:
-		txt += tb+(x.title() + ": " + str(d[x])) + "\n"
-	txt += ("\n")
-	return txt
-def GetHTML(d, nl="", dv="div"):
-
-	txt = "<{}>".format(dv)
-	tab = ""
-	for x in d:
-		if x not in "name":
-			txt += "{nl}{tab}<br>{nl}{tab}{x}: {dx}".format(nl=nl, x=x.title(), dx=d[x], tab=tab).replace("\n", "<br>")
-		else:
-			txt += "{nl}{tab}<br>{nl}{tab}<h3>{dx}</h3>".format(nl=nl, x=x, dx=d[x], tab=tab)
-	txt += "{nl}</{}>".format(dv, nl=nl)
-	txt = txt.replace("<br><br>", "<br>").replace("<br></p>", "</p>").replace("<br><p>", "<p>")
-	return txt
-#--------------
-#Others.py
+import Lib, random, Thruster
+from Lib import StrDict
+from Lore import Lore
 from math import sqrt
 
 def OneLineFormat(d):
-	txt = d["name"] + " ("
+	txt = "("
+	if "name" in d:
+		txt = d["name"] + " ("
 	for x in d:
 		if x not in "name":
-			txt += x + ": " + d[x] + ", "
+			txt += x + ": " + str(d[x]) + ", "
 	return txt[:-2] + ")"
 def LifeSupportModule():
 	o = []
@@ -46,7 +28,7 @@ def LifeSupport():
 	names2 = "breather infuser emitter giver maker smeller sniffer".split(" ")
 	name = random.choice(names1) + random.choice(names2)
 	slots = random.randrange(4, 12)
-	thing = {"name": name, "module Slots": str(slots)}
+	thing = {"name": name.title(), "module Slots": str(slots)}
 	moduleefficiency = random.randrange(20, 100)/100
 	thing["module efficiency"] = moduleefficiency
 	thing["module 1"] = "Basic Gravitational Control Module"
@@ -64,10 +46,10 @@ def LifeSupport():
 			cost += 4000 * moduleefficiency
 	thing["cost"] = cost
 	return thing
-def GetSpecificThruster(t):
+def GetThruster(t):
 	th = None
 	while th == None:
-		a = GetThruster()
+		a = Thruster.GetThruster()
 		if a["type"] == t:
 			th = a
 	return th
@@ -75,7 +57,7 @@ def GetSpecificThruster(t):
 def ShipWeapon():
 	names1 = "death star planet dust gas juice pan bee coal fire bag weasle sea dirt floor sand space nail cream wealth knife cannon beef police train wack face life bag rain snow frisbee coal".split(" ")
 	names2 = "killer shooter ruiner spewer fighter knotter gun blaster launcher sender maker vaporizer zapper".split(" ")
-	name = random.choice(names1) + random.choice(names2)
+	name = (random.choice(names1) + random.choice(names2)).title()
 	weaponclass = random.choice("B F C R W".split(" "))
 	damage = random.randrange(3, 30)
 	cost = 0
@@ -113,8 +95,8 @@ def ShipGenerator():
 	n1 = "death star planet sour dust gas juice pan bee coal bag weasle sea dirt floor sand space nail cream wealth knife cannon beef police train fire wack face life bag rain snow frisbee coal".split(" ")
 	n2 = "speeder fighter eagle parrot genguin sparrow goose fisher duck bird jet skimmer glider ship wing yacht boat lugger vessel sailer mobile falcon".split(" ")
 	ship = {"name": random.choice(n1).title() + random.choice(n2)}
-	hthrusters = GetSpecificThruster("High level thrusters")
-	lthrusters = GetSpecificThruster("Low level thrusters")
+	hthrusters = GetThruster("High level thrusters")
+	lthrusters = GetThruster("Low level thrusters")
 	plating = random.choice(Lore.Materials.shiparmor)
 	lowlevelspeed = 0
 	highlevelspeed = 0
@@ -142,7 +124,8 @@ def ShipGenerator():
 		mass += wpn["mass"]
 		ship["Weapon {} {}".format(x, wpns[x])] = "\n"+StrDict(wpn, tb="    ")
 	ship["low level fuel bay"] = FuelBay(random.randrange(int(body["fc"]*.25*100), int(body["fc"]*.75*100))/100, "Low Level")
-	ship["high level fuel bay"] = FuelBay(body["fc"]-ship["low level fuel bay"]["capacity"], "High Level")
+	ship["high level fuel bay"] = StrDict(FuelBay(body["fc"]-ship["low level fuel bay"]["capacity"], "High Level"), tb="    ")
+	ship["low level fuel bay"] = StrDict(ship["low level fuel bay"], tb="    ")
 	ship["total mass"] = mass
 	ship["total cost"] = cost
 
@@ -150,92 +133,5 @@ def ShipGenerator():
 	ship["high level thrusters"] = "\n"+StrDict(hthrusters, tb="    ")
 	ship["low level thrusters"] = "\n"+StrDict(lthrusters, tb="    ")
 	return ship
-#--------------
-def Round(num):
-	return int(num*100)/100
-
-def GetThruster():
-	names1 = "death star planet dust gas juice pan bee coal bag weasle sea dirt floor sand space nail cream wealth knife cannon beef police train".split(" ")
-	names2 = "blaster thruster passer ranger speeder booster jetter equalizer finisher driver swimmer propeller skipper weaver mover runner walker".split(" ")
-	name = random.choice(names1) + random.choice(names2)
-	types = ["High level thrusters", "Low level thrusters"]
-	speedranges = [[.1, 2.7], [5, 40]]
-	costs = [[40000, 100000], [10000, 40000]]
-	fuelranges = [[.3, 6], [50, 300]]
-	mass = random.randrange(40, 200)
-	tp = random.choice([0, 1])
-	distanceperunit = random.randrange(1, 1000)/1000
-	speed = random.randrange(1, 1000)/1000
-	cost = costs[tp][0] + (costs[tp][1] - costs[tp][0])*.4 * distanceperunit + .5*(speed*(1+speed))*(costs[tp][1] - costs[tp][0]) + max(10000-mass*30, 0)
-	costvariation = 1 + random.randrange(-300, 300)/1000
-	cost = cost * costvariation
-	thing = {"name": name, "type": types[tp], "distance per unit": distanceperunit*(fuelranges[tp][1]-fuelranges[tp][0])+fuelranges[tp][0]}
-	thing["speed"] = (speedranges[tp][1]-speedranges[tp][0])*speed+speedranges[tp][0]
-	thing["cost"] = Round(cost)
-	thing['mass'] = mass
-	return thing
-#------------
-#LORE
-#Libary for obtaining lore in python dictonaries.
-
-class Lore:
-	bodies = []#ship bodies
-	class Fuels:
-		fueltypes = []
-		low = []
-		high = []
-	class Materials:#catalogue of materials used in WPLTS
-		shiparmor = []
-		allmats = []
 
 
-#lore builder
-class LB:
-	#material. strength is on a scale of 0 - 100. Most things range in the 20-50 range.
-	def Fuel(name, symbol, cost, efficiency):
-		fid = "FT-" + symbol.upper() + name[:1].upper() + "L"
-		thing = {"name": name, "id": fid, "cost": cost, "efficiency": efficiency}
-		Lore.Fuels.fueltypes.append(thing)
-		if name.startswith("L"):
-			Lore.Fuels.low.append(thing)
-		if name.startswith("H"):
-			Lore.Fuels.high.append(thing)
-		return thing
-	def Mat(name, cost, mass, strength, data=[]):
-		thing = {"name": name, "cost": cost, "strength": strength, "notes": data, "mass": mass}
-		Lore.Materials.allmats.append(thing)
-		return thing
-	def ShipBody(name, mass, cost, FC, ICC, clss, WC, plating, HLT=2, LLT=2, GT=8):
-		return {"name": name, "mass": mass, "cost": cost, "fc": FC, "icc": ICC, "class": clss, "wc": WC, "hlt": HLT, "llt":LLT, "gt":GT, "plating": plating}
-	def Build():
-		Lore.Materials.shiparmor.append(LB.Mat("Chengerthium plating", 2500, 280, 20))
-		Lore.Materials.shiparmor.append(LB.Mat("Bungorian Steel Plating", 472000, 400, 80, data=["Discontinued", "Resistant to high velocity impacts."]))
-		Lore.Materials.shiparmor.append(LB.Mat("Altamanium Steel", 70000, 360, 50))
-		Lore.bodies.append(LB.ShipBody("FK-23", 3900, 897000, 12, 4.75, "A", "WWB", 3.75))
-		Lore.bodies.append(LB.ShipBody("HAT-46", 5400, 324000, 14, 6.5, "B", "FFWW", 5))
-		Lore.bodies.append(LB.ShipBody("VX-92", 4300, 468000, 11, 4, "D", "WWWW", 4.25, LLT=4, GT=10))
-		Lore.bodies.append(LB.ShipBody("PCF-97", 8500, 233000, 10, 5, "R", "FFWW",5., HLT=4))
-		LB.Fuel("Low Level PLutonium Fuel", "P", 920, 9)
-		LB.Fuel("Low Level Uranium Fuel", "U", 460, 6)
-		LB.Fuel("High Level Plutogen Fuel", "PH", 7370, 7)
-		LB.Fuel("High Level Hylutogen Fuel", "HP", 13260, 10)
-		LB.Fuel("High Level Neptunium Fuel", "NPT", 8800, 8)
-
-LB.Build()
-#----------
-from browser import document
-def Generate():
-	sources = {'thruster':GetThruster, 'lifesupport': LifeSupport, 'ship': ShipGenerator, 'shipweapon': ShipWeapon}
-	sourceskeys = []
-	for x in sources:
-		sourceskeys.append(x)
-	source = random.choice(sourceskeys)
-	if source in sources:
-		print(source.upper()+"\n")	
-		generated = sources[source]()
-		document.getElementById("Ships").innerHTML += ("<br><br><br>" + (GetHTML(generated).replace("    ", "&emsp;")))
-	else:
-		print('Invalid generator source')
-
-
-Generate()
