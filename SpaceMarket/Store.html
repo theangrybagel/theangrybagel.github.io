@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WPLTS - Market</title>
+        <script>
+            var DirectoryAmt = 1;
+        </script>
+
+        <script src="brython.js"></script>
+        <script type="text/javascript" src="brython_stdlib.js"></script>
+    </head>
+    <body onload="brython()">
+    <div id="NavBarThing" class=""> </div>
+    <script src = "../Nav.js" id="s1"></script>
+    <script src="../code.js" id="s2"></script>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+    <link href="market.css" rel="stylesheet" type="text/css">
+    <script>StartNav();</script>
+
+        <h1 id="title" class="title">Loading... Please wait</h1>
+        <p>This here is a giant space market. It is updated every month with new content. Stuff on the main page will change throughout the month, however. </p>
+        <div id="Store">
+            store
+        </div>
+        <div id="Ads">
+        </div>
+        <style>
+            #Announcements
+            {           
+                position:fixed;
+               left:0px;
+               bottom:0px;
+               height:30px;
+               width:100%;
+               background:#340042;
+            }
+            #Store
+            {
+                float: left;
+                width: 75%;
+            }
+            #Ads
+            {
+                float: right;
+                width: 24%;
+            }
+        </style>
+        <div id="Announcements">
+            <div class="scroll-left" id="announc">Welcome to the Galactic Market, enjoy the ads!</div>
+        </div>
+    <script type="text/python" src="Main.py">
+    </script>
+    </body>
+</html>
