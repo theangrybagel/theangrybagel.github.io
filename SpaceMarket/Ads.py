@@ -33,6 +33,29 @@ ads = ["""
 	<p class='c'>#revivegoopwazzer</p>
 </div>
 """,
+"""
+<div style='background-color: #025418; color: #ff96f6;'>
+	<h3 class='c'>In the mood for some nice beer? Try Laughcup's beer! </h3><br><br>
+	<h4 class='c b'><i>Extracted from Lorfs (with their consent)</i></h4>
+	<br>
+	<p class='c'><i>Laughcup Beers</i></p>
+</div>
+""",
+"""
+<div style='background-color: #0f23ff; color: #f8e3ff;'>
+	<h3 class='c'>Announcement from the Galactic Peace Department</h3><br><br>
+	<h4 class='c b'><i>We know that many of you have been having fun drinking your ship fuel. Please, for the love of ROTU, don't drink ship fuel. It's bad for you and can be potentially lethal. The Congress of the Federation is passing a new law that will make the consumption of ship fuel illegal in a few weeks, so try not to get addicted.</i></h4>
+	<br>
+	<p class='c'><i>GPD Public Service Announcement</i></p>
+</div>
+""",
+"""
+<div style='background-color: #ff0011; color: #8da386;'>
+	<h3 class='c'>Cheap fuel starting from 300CR per unit!</h3><br><br>
+	<br>
+	<p class='c'><i>Havoinia Fuel Company</i></p><!--SectorMap/Sector 39/PB-12-Huruta-ZKC-33-Valoclite Lambada XIV/About.html-->
+</div>
+"""
 ]
 
 
