@@ -11,7 +11,7 @@ from browser import document, timer
 
 catalogue = []
 def DisplayAsHTML(generated, ID, rating=5):
-	txt = "<br><br><br><h2>{}</h2><button class='button' style='border: none;' id='buttonfor{}' onclick=\"ViewDiv('{}', '{}')\">Click here to view</button>".format(generated["name"], ID, generated["name"], (GetHTML(generated).replace("    ", "&emsp;"))) + "<span>" + GetHTMLStars(rating) + "</span>" + "<div id='{}'>".format(ID) + "</div>"
+	txt = "<br><br><br><h3>{}</h3><button class='button' style='border: none;' id='buttonfor{}' onclick=\"ViewDiv('{}', '{}')\">Click here to view</button>".format(generated["name"], ID, generated["name"], (GetHTML(generated).replace("    ", "&emsp;"))) + "<span>" + GetHTMLStars(rating) + "</span>" + "<div id='{}'>".format(ID) + "</div>"
 	return (txt)
 
 def Generate():
@@ -42,12 +42,20 @@ document.getElementById("Store").innerHTML = "<h2>Finding trending items... Plea
 def SetupTrendView():
 	trending = sorted(catalogue, key=itemgetter('trending'))
 	trendingShips = []
+	trendingWeapons = []
 	for x in trending:
 		if x['tag'] == "ship":
 			trendingShips.append(x)
-	document.getElementById("Store").innerHTML = "<div id='trending'><h2>Trending Now</h2></div>"
+		if "weapon" in x['tag']:
+			trendingWeapons.append(x)
+	document.getElementById("Store").innerHTML = "<div id='trending'><h2>Trending Now</h2><h2><i>Ships</i></h2></div>"
 	for x, i in zip(trendingShips, range(len(trendingShips))):
-		if i >= 5 or x == None:
+		if i >= 8 or x == None:
+			break
+		document.getElementById("trending").innerHTML += DisplayAsHTML(x["data"], x["data"]["name"], rating=x["rating"])
+	document.getElementById("trending").innerHTML += "<h2>Weapons</h2>"
+	for x, i in zip(trendingWeapons, range(len(trendingWeapons))):
+		if i >= 10 or x == None:
 			break
 		document.getElementById("trending").innerHTML += DisplayAsHTML(x["data"], x["data"]["name"], rating=x["rating"])
 	return
@@ -61,6 +69,10 @@ def AlterTrends():
 
 AlterTrends()
 SetupTrendView()
+
+
+
+
 random.seed(now.second*now.minute*now.year)
 #add advertisements
 from Ads import ads, news
