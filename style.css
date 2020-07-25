@@ -13,6 +13,10 @@ body
     font-family: 'Chakra Petch', sans-serif;
 }
 
+.spoilers
+{
+    font-family: monospace;
+}
 #planetcanvas{
 
 }
